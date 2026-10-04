@@ -135,12 +135,20 @@ if ($q !== "") {
                         <td>
                             <?= (int)$b["available_quantity"] ?>
                         </td>
-                        <td>
-                            <a class="btn small" href="edit.php?id=<?= (int)$b["id"] ?>">Edit</a>
+                       <td>
+    <div class="actions">
+        <a class="btn small" href="edit.php?id=<?= (int)$b["id"] ?>">
+            Edit
+        </a>
 
-                            <a class="btn small danger" href="delete.php?id=<?= (int)$b["id"] ?>"
-                                onclick="return confirm('Are you sure you want to delete this book?')">Delete</a>
-                        </td>
+        <a class="btn small danger"
+           href="delete.php?id=<?= (int)$b["id"] ?>"
+           onclick="return confirm('Are you sure you want to delete this book?')">
+            Delete
+        </a>
+    </div>
+</td>
+
                     </tr>
 
                 <?php endwhile; ?>

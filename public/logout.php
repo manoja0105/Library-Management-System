@@ -18,7 +18,7 @@ session_destroy();
 </head>
 
 <body>
-//kkkk
+
 <div class="login-page">
 
     <div class="login-container">

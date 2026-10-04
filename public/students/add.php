@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label>Student Name *</label>
         <input name="name" required>
 
-        <label>Grade</label>
+        <label>Department</label>
         <input name="grade">
 
         <label>Contact Number</label>
