@@ -281,6 +281,18 @@ textarea::placeholder {
     border-radius: 5px;
     
 }
+.btn.small.re{
+    background: #b83f4b;
+    color: #ffffff;
+    border-color: #b83f4b;
+
+
+}
+.btn.small.re:hover{
+     background: #96333d;
+    border-color: #96333d;
+
+}
 .btn.return {
     min-height: 32px;
     padding: 6px 11px;

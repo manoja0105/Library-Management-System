@@ -2,7 +2,7 @@
 <?php
 require_once "../../config/db.php";
 require_once "../../includes/auth.php";
-require_once "../../includes/csrf.php";
+
 
 
 $holds = $conn->query(
@@ -400,26 +400,13 @@ if (!$holds) {
             </a>
 
             
-            <form method="POST"
-                action="cancel.php"
-                class="inline-form" >
+            <form method="POST" action="cancel.php" class="inline-form" >
 
-                <input
-                    type="hidden"
-                    name="csrf_token"
-                    value="<?= htmlspecialchars(csrf_token()) ?>" >
+              
 
-                <input
-                    type="hidden"
-                    name="id"
-                    value="<?= (int)$h["id"] ?>" >
+                <input type="hidden" name="id" value="<?= (int)$h["id"] ?>" >
 
-                <button
-                    type="submit"
-                    class="btn small danger"
-                    onclick="return confirm('Cancel this active hold?');">
-                    Cancel
-                </button>
+                <button  type="submit" class="btn small danger" onclick="return confirm('Cancel this active hold?');">  Cancel </button>
 
             </form>
 

@@ -1,7 +1,6 @@
 <?php
 require_once "../../config/db.php";
 require_once "../../includes/auth.php";
-require_once "../../includes/csrf.php";
 
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 if (!$id || $id < 1) {
@@ -12,7 +11,7 @@ if (!$id || $id < 1) {
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    verify_csrf();
+    
 
     $dueDate = $_POST["due_date"] ?? "";
 
@@ -177,7 +176,7 @@ if (!$hold) {
 
         <?php if ($hold["status"] === "ACTIVE"): ?>
             <form method="POST">
-                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(csrf_token()) ?>">
+               
 
                 <label for="due_date">Due Date *</label>
                 <input type="date"

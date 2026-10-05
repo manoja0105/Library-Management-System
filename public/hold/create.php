@@ -1,7 +1,7 @@
 <?php
 
 require_once "../../config/db.php";
-require_once "../../includes/csrf.php";
+
 
 date_default_timezone_set("Asia/Colombo");
 
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit();
 }
 
-verify_csrf();
+
 
 $indexNumber = trim($_POST["index_number"] ?? "");
 $email       = trim($_POST["email"] ?? "");

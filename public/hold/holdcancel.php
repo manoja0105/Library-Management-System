@@ -1,6 +1,6 @@
 <?php
 require_once "../../config/db.php";
-require_once "../../includes/csrf.php";
+
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit();
 }
 
-verify_csrf();
+
 
 $token = trim($_POST["hold_token"] ?? "");
 

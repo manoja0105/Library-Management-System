@@ -1,2 +1,4 @@
 @echo off
-"C:\XAMP\php\php.exe" "C:\XAMP\htdocs\Library Management System\scripts\send_hold_notifications.php" >> "C:\XAMP\htdocs\Library Management System\scripts\hold_notifications.log" 2>&1
+set "SCRIPT_DIR=%~dp0"
+
+"%SCRIPT_DIR%..\..\php\php.exe" "%SCRIPT_DIR%send_hold_notifications.php" >> "%SCRIPT_DIR%hold_notifications.log" 2>&1

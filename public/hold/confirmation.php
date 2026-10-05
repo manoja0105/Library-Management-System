@@ -5,7 +5,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once "../../config/db.php";
-require_once "../../includes/csrf.php";
+
+
 
 
 
@@ -274,71 +275,32 @@ $remainingSeconds = max(
 
                 
 
-                <form
-                    method="POST"
-                    action="../index.php"
-                    style="display:inline;"
-                >
+                <form method="POST" action="../index.php" style="display:inline;" >
 
-                    <input
-                        type="hidden"
-                        name="csrf_token"
-                        value="<?= htmlspecialchars(csrf_token()) ?>"
-                    >
 
-                    <input
-                        type="hidden"
-                        name="hold_token"
-                        value="<?= htmlspecialchars($token) ?>"
-                    >
+                    <input type="hidden" name="hold_token" value="<?= htmlspecialchars($token) ?>">
 
-                    <button
-                        type="submit"
-                        class="btn"
-                    >
-                        Confirm Activity
-                    </button>
+                    <button type="submit" class="btn" > Confirm Activity </button>
 
                 </form>
 
 
                 
 
-                <a
-                    href="../index.php"
-                    class="btn secondary"
-                >
+                <a href="../index.php" class="btn secondary" >
                     Back to Books
                 </a>
 
 
                 
 
-                <form
-                    method="POST"
-                    action="holdcancel.php"
-                    style="display:inline;"
-                >
+                <form method="POST" action="holdcancel.php" style="display:inline;">
 
-                    <input
-                        type="hidden"
-                        name="csrf_token"
-                        value="<?= htmlspecialchars(csrf_token()) ?>"
-                    >
+                    
 
-                    <input
-                        type="hidden"
-                        name="hold_token"
-                        value="<?= htmlspecialchars($token) ?>"
-                    >
+                    <input type="hidden" name="hold_token" value="<?= htmlspecialchars($token) ?>">
 
-                    <button
-                        type="submit"
-                        class="btn danger"
-                        onclick="return confirm('Cancel this active hold?')"
-                    >
-                        Cancel Hold
-                    </button>
+                    <button type="submit" class="btn danger" onclick="return confirm('Cancel this active hold?')">Cancel Hold  </button>
 
                 </form>
 

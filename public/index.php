@@ -1,7 +1,7 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) { session_start(); }
 require_once "../config/db.php";
-require_once "../includes/csrf.php";
+
 
 $q = trim($_GET["q"] ?? "");
 
@@ -119,20 +119,20 @@ if ($q !== "") {
         <div id="holdError" class="alert error" style="display:none;"></div>
 
         <form method="POST" action="hold/create.php" id="holdForm">
-            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(csrf_token()) ?>">
+            
             <input type="hidden" name="book_id" id="holdBookId">
 
-            <label for="index_number">Student Registration Number *</label>
+            <label for="index_number">Student Registration Number </label>
             <input type="text" id="index_number" name="index_number"
                    placeholder="Example: ST001" required>
 
-            <label for="email">Email Address *</label>
+            <label for="email">Email Address </label>
             <input type="email" id="email" name="email"
                    placeholder="student@example.com" required>
 
-            <label for="phone_number">Phone Number *</label>
+            <label for="phone_number">Phone Number </label>
             <input type="text" id="phone_number" name="phone_number"
-                   placeholder="0771234567" maxlength="20" required>
+                   placeholder="0771234567" maxlength="13" required>
 
             <div class="actions">
                 <button type="submit" class="btn primary">Confirm Hold</button>

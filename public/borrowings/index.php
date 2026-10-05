@@ -78,7 +78,7 @@ $borrowings = $conn->query(
                     <td>
                         <?php if ($r["status"] === "Issued"): ?>
 
-                            <a class="btn small" href="return.php?id=<?= $r["id"] ?>">
+                            <a class="btn small re" href="return.php?id=<?= $r["id"] ?>">
                                 Return
                             </a>
 
